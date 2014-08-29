@@ -3,6 +3,7 @@ package edu.wpi.first.wpilibj;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -13,9 +14,10 @@ public class OI {
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
-    // Joystick stick = new Joystick(port);
-    // Button button = new JoystickButton(stick, buttonNumber);
-    
+    Joystick xbox = new Joystick(1);
+    Joystick flight = new Joystick(2);
+    Button button = new JoystickButton(flight, 1);
+   
     // Another type of button you can create is a DigitalIOButton, which is
     // a button or switch hooked up to the cypress module. These are useful if
     // you want to build a customized operator interface.
@@ -40,5 +42,13 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    public double leftSpeed(){
+        double leftSpeed = xbox.getRawAxis(5);
+        return leftSpeed;
+    }
+    public double rightSpeed(){
+        double rightSpeed = xbox.getRawAxis(2)*-1;
+        return rightSpeed;
+    }
 }
 
