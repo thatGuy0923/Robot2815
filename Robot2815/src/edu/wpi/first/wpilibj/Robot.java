@@ -13,7 +13,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.commands.CommandBase;
+import edu.wpi.first.wpilibj.commands.DriveWithJoystick;
 import edu.wpi.first.wpilibj.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,7 +27,16 @@ import edu.wpi.first.wpilibj.commands.ExampleCommand;
  */
 public class Robot extends IterativeRobot {
 
+    //variable initializtion
+    //Drive
+    EJDrive myLittleRobot;
+    EJShooter myLittleShooter;
+    
+    
+    
+    
     Command autonomousCommand;
+    Command driveWithJoystick;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -33,9 +45,11 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
-
+        driveWithJoystick = new DriveWithJoystick();
         // Initialize all subsystems
         CommandBase.init();
+       // myLittleRobot = new EJDrive();
+        //myLittleShooter = new EJShooter();
     }
 
     public void autonomousInit() {
@@ -56,6 +70,10 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         autonomousCommand.cancel();
+        driveWithJoystick.start();
+        //myLittleRobot.drive();
+        //myLittleShooter.shoot();
+        //myLittleShooter.nyooms();
     }
 
     /**
