@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.OI;
 import edu.wpi.first.wpilibj.subsystems.AirCompressor;
 import edu.wpi.first.wpilibj.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.subsystems.ExampleSubsystem;
+import edu.wpi.first.wpilibj.subsystems.Pneumatics;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -20,7 +21,7 @@ public abstract class CommandBase extends Command {
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
     public static DriveTrain drivetrain = new DriveTrain();
     public static AirCompressor compressor = new AirCompressor();
-    
+    public static Pneumatics pneumatic = new Pneumatics();
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from
@@ -34,6 +35,7 @@ public abstract class CommandBase extends Command {
         SmartDashboard.putData(exampleSubsystem);
         SmartDashboard.putData(drivetrain);
         SmartDashboard.putData(compressor);
+        SmartDashboard.putData(pneumatic);
     }
 
     public CommandBase(String name) {

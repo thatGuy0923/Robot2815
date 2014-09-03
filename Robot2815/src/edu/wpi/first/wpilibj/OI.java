@@ -16,8 +16,8 @@ public class OI {
     // number it is.
     Joystick xbox = new Joystick(1);
     Joystick flight = new Joystick(2);
-    Button button = new JoystickButton(flight, 1);
-   
+    Button fire = new JoystickButton(flight, 1);
+    Button presure = new JoystickButton(flight, 3);
     // Another type of button you can create is a DigitalIOButton, which is
     // a button or switch hooked up to the cypress module. These are useful if
     // you want to build a customized operator interface.
