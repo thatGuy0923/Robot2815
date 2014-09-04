@@ -9,7 +9,7 @@ package edu.wpi.first.wpilibj.commands;
  * @author stefan.singer
  */
 public class Latch extends CommandBase {
-
+    private boolean pistonValue = false;
     public Latch(){
         requires(pneumatic);
     }
@@ -18,7 +18,8 @@ public class Latch extends CommandBase {
     }
 
     protected void execute() {
-        
+        pistonValue = !pistonValue;
+        pneumatic.activateFire(pistonValue);
     }
 
     protected boolean isFinished() {

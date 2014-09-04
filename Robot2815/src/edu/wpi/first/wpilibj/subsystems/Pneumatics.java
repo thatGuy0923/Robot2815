@@ -20,10 +20,15 @@ public class Pneumatics extends Subsystem{
         pressure = new Solenoid (RobotMap.pressureSolonoid);
         
     }
+    
     protected void initDefaultCommand() {
     }
-    public void activate(){
-        
+    public void activateFire(boolean value){
+        fire[0].set(!value);
+        fire[1].set(value);
+    }
+    public void activatePressure(boolean value){
+        pressure.set(value);
     }
     
 }

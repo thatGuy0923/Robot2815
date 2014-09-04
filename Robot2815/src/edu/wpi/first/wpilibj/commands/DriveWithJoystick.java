@@ -23,7 +23,7 @@ public class DriveWithJoystick extends CommandBase{
     }
 
     protected void execute() {
-        drivetrain.arcadeDrive(oi.leftSpeed(), oi.rightSpeed());
+        drivetrain.arcadeDrive(oi.rightSpeed(), oi.leftSpeed());
     }
 
     protected boolean isFinished() {

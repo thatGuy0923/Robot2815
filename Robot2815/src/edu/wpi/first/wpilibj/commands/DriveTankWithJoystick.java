@@ -4,21 +4,21 @@
  */
 package edu.wpi.first.wpilibj.commands;
 
+
 /**
  *
  * @author stefan.singer
  */
-public class Shoot extends CommandBase {
-    private boolean pistonValue = false;
-    public Shoot(){
-        requires(pneumatic);
+public class DriveTankWithJoystick extends CommandBase {
+    
+    public DriveTankWithJoystick(){
+        requires(drivetrain);
     }
     protected void initialize() {
     }
 
     protected void execute() {
-        pistonValue = !pistonValue;
-        pneumatic.activatePressure(pistonValue);
+        
     }
 
     protected boolean isFinished() {
@@ -30,5 +30,8 @@ public class Shoot extends CommandBase {
 
     protected void interrupted() {
     }
+
+   
+    
     
 }

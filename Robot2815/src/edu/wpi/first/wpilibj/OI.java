@@ -43,7 +43,7 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
     public double leftSpeed(){
-        double leftSpeed = xbox.getRawAxis(5);
+        double leftSpeed = xbox.getRawAxis(4);
         return leftSpeed;
     }
     public double rightSpeed(){
